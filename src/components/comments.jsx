@@ -15,7 +15,7 @@ const timeAgo = (timestamp) => {
   return formatDistanceToNow(new Date(timestamp * 1000), { addSuffix: true });
 };
 
-// This component is now designed to fetch its data based on commentId
+
 const Comment = ({ commentId }) => {
   const [comment, setComment] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

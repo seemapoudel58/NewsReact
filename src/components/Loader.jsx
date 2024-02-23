@@ -3,11 +3,12 @@ import Skeleton from '@mui/material/Skeleton';
 
 const SkeletonLoader = () => {
   return (
-    <li>
-      <Skeleton variant="rectangular" width="70%" height={20} marginBottom={1} />
-      <Skeleton variant="rectangular" width="50%" height={20} marginBottom={1} />
-      <Skeleton variant="rectangular" width="30%" height={20} />
-    </li>
+    <div className='max-w-3xl mx-auto'>
+    {[1, 2, 3, 4, 5, 6, 7].map((index) => (
+      <Skeleton key={index} height={200} animation="wave" sx={{ marginBottom: -8}}/>
+    ))}
+  </div>
+   
   );
 };
 

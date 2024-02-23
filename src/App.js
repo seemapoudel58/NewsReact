@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div>
-        <h1>Hacker News</h1>
+        <h1 className='flex item-center justify-center font-bold text-4xl my-8'>Hacker News</h1>
         <Routes> 
           <Route exact path="/" element={<Stories />} />
           <Route path="/story/:id" element={<StoryDetail />} />

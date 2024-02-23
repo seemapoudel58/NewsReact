@@ -16,7 +16,7 @@ const timeAgo = (timestamp) => {
 export default function StoryList({ story }) {
   return (
     <li>
-      <div className='max-w-3xl mx-auto bg-white rounded-2xl overflow-hidden shadow-lg my-7 '>
+      <div className='max-w-3xl mx-auto bg-white rounded-2xl overflow-hidden shadow-md my-7  transition-shadow duration-700 ease-in-out hover:shadow-xl'>
         <div className= 'p-4 my-3'>
           <Link
             to={`story/${story.id}`}

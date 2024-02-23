@@ -47,7 +47,7 @@ const Stories = () => {
         onChange={handleChangePage}
         shape="rounded"
         boundaryCount={2}
-        
+        className="flex item-center justify-center "
       />
     </div>
   );
