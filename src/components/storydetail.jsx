@@ -34,7 +34,7 @@ const StoryDetail = () => {
         <button>Home</button>
         </Link>
       <h1>{story.title}</h1>
-      <div className="score">
+      <div style={{textAlign: 'center', fontFamily:'times-roman'}}>
         <FontAwesomeIcon icon={faStar} className="icon" /> {story.score}
       </div>
       <div className="meta">
