@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, Link  } from "react-router-dom";
 import useFetchStory from "../Hooks/customHooks";
 import Comment from "./comments";
-import { Skeleton } from "@mui/material";
+import SkeletonLoader from "./Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faComment,
@@ -23,13 +23,7 @@ const StoryDetail = () => {
   const { story, loading, error } = useFetchStory(id);
 
   if (loading) {
-    return (
-      <div>
-      <Skeleton width="30%" />
-      <Skeleton width="80%" />
-      <Skeleton width="70%" />
-    </div>
-    );
+    return <SkeletonLoader />;
   }
   if (error || !story) {
     return <p>Story not found or error fetching story.</p>;
@@ -41,7 +35,7 @@ const StoryDetail = () => {
         <button>Home</button>
         </Link>
       <h1>{story.title}</h1>
-      <div className="score">
+      <div style={{ fontFamily:'times-roman' }}>
         <FontAwesomeIcon icon={faStar} className="icon" /> {story.score}
       </div>
       <div className="meta">
