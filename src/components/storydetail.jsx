@@ -1,8 +1,8 @@
 import React from "react";
-import { useParams, Link  } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import useFetchStory from "../Hooks/customHooks";
 import Comment from "./comments";
-import SkeletonLoader from "./Loader";
+import { Skeleton } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faComment,
@@ -23,7 +23,13 @@ const StoryDetail = () => {
   const { story, loading, error } = useFetchStory(id);
 
   if (loading) {
-    return <SkeletonLoader />;
+    return (
+      <div>
+        <Skeleton width="30%" />
+        <Skeleton width="80%" />
+        <Skeleton width="70%" />
+      </div>
+    );
   }
   if (error || !story) {
     return <p>Story not found or error fetching story.</p>;
@@ -31,11 +37,11 @@ const StoryDetail = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <Link to='/'>
+      <Link to="/">
         <button>Home</button>
-        </Link>
+      </Link>
       <h1>{story.title}</h1>
-      <div style={{ fontFamily:'times-roman' }}>
+      <div style={{ fontFamily: "times-roman" }}>
         <FontAwesomeIcon icon={faStar} className="icon" /> {story.score}
       </div>
       <div className="meta">

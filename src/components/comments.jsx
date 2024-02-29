@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getComments } from "../API/api";
-import { Box, Skeleton, Typography } from "@mui/material";
+import { Box, Skeleton } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faClock } from "@fortawesome/free-regular-svg-icons";
 
