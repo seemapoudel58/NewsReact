@@ -2,7 +2,7 @@ import React from "react";
 import { useParams, Link  } from "react-router-dom";
 import useFetchStory from "../Hooks/customHooks";
 import Comment from "./comments";
-import SkeletonLoader from "./Loader";
+import { Skeleton } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faComment,
@@ -23,14 +23,20 @@ const StoryDetail = () => {
   const { story, loading, error } = useFetchStory(id);
 
   if (loading) {
-    return <SkeletonLoader />;
+    return (
+      <div>
+      <Skeleton width="30%" />
+      <Skeleton width="80%" />
+      <Skeleton width="70%" />
+    </div>
+    );
   }
   if (error || !story) {
     return <p>Story not found or error fetching story.</p>;
   }
 
   return (
-    <div>
+    <div className="container mx-auto p-6">
       <Link to='/'>
         <button>Home</button>
         </Link>
