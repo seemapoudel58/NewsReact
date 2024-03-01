@@ -36,11 +36,11 @@ const StoryDetail = () => {
   }
 
   return (
-    <div className="container mx-auto p-7">
-      <div className="fixed top-0 right-0 p-4  justify-end items-start">
+    <div className="container mx-w-5xl p-7  ">
+      <div className="  mt-0   flex  justify-end items-start mr-3 ">
         <Link
           to="/"
-          className="bg-gray-100 text-black rounded-md px-3 py-1 border border-black hover:bg-gray-300 text-lg "
+          className="bg-gray-100 text-black rounded-md  mb-0 px-3 py-1 border border-black hover:bg-gray-300 text-lg "
         >
           Home
         </Link>
@@ -75,7 +75,7 @@ const StoryDetail = () => {
       </div>
 
       <div>
-        <h3>Comments:</h3>
+        <h3 className="text-2xl mt-5 font-semibold">Comments:</h3>
         {story.kids ? (
           story.kids.map((kidId) => <Comment key={kidId} commentId={kidId} />)
         ) : (

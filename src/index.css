@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.comment-content a {
+    @apply italic;
+    max-width: 50%;
+    word-wrap: break-word;
+  }
+  
