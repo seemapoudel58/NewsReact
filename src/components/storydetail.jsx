@@ -36,32 +36,39 @@ const StoryDetail = () => {
   }
 
   return (
-    <div className="container mx-auto p-6">
-      <Link to="/">
-        <button>Home</button>
-      </Link>
-      <h1>{story.title}</h1>
-      <div style={{ fontFamily: "times-roman" }}>
-        <FontAwesomeIcon icon={faStar} className="icon" /> {story.score}
+    <div className="container mx-auto p-7">
+      <div className="fixed top-0 right-0 p-4  justify-end items-start">
+        <Link
+          to="/"
+          className="bg-gray-100 text-black rounded-md px-3 py-1 border border-black hover:bg-gray-300 text-lg "
+        >
+          Home
+        </Link>
       </div>
-      <div className="meta">
+      <h1 className="text-3xl font-semibold text-gray-700 hover:text-gray-900">
+        {story.title}
+      </h1>
+      <div className="text-xl">
+        <FontAwesomeIcon icon={faStar} className="mt-3" /> {story.score}
+      </div>
+      <div className="mt-2 flex items-center space-x-5">
         {story.by !== undefined && (
           <span>
-            <FontAwesomeIcon icon={faUser} className="icon" /> by {story.by}
+            <FontAwesomeIcon icon={faUser} className="mr-1.5" /> by {story.by}
           </span>
         )}
         <span>
-          <FontAwesomeIcon icon={faComment} className="icon" />
+          <FontAwesomeIcon icon={faComment} className="mr-1.5" />
           {story.descendants != null ? story.descendants : 0} comments
         </span>
         {story.time !== undefined && (
           <span>
-            <FontAwesomeIcon icon={faClock} className="icon" />{" "}
+            <FontAwesomeIcon icon={faClock} className="mr-1.5" />
             {timeAgo(story.time)}
           </span>
         )}
-        <span>
-          <a href={story.url} target="_blank" rel="noopener noreferrer">
+        <span >
+          <a href={story.url} target="_blank" rel="noopener noreferrer" className="flex items-center">
             <FaLink /> View Story
           </a>
         </span>

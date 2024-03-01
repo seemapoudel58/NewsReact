@@ -25,7 +25,8 @@ export default function StoryList({ story }) {
             {story.title}
           </Link>
         </div>
-        <div className='p-4 bg-gray-100'>
+
+        <div className='p-4 bg-gray-100 '>
             <FontAwesomeIcon icon={faStar}  style={{ fontSize: '18px' }}/> {story.score}
           <div className='mt-3 flex items-center space-x-5'>
             {story.by !== undefined && (
